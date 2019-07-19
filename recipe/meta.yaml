@@ -15,7 +15,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 1002
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -25,7 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}        # [not win]
     - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - m2w64-toolchain            # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}sed               # [win]
     - {{posix}}grep              # [win]
@@ -66,7 +66,8 @@ test:
     - "\"%R%\" -e \"library('RPostgres')\""  # [win]
     - conda inspect linkages -p $PREFIX r-rpostgres  # [not win]
     - conda inspect objects -p $PREFIX r-rpostgres  # [osx]
-
+  requires:
+    - conda-build
 about:
   home: https://github.com/r-dbi/RPostgres
   license: GPL-2
@@ -84,3 +85,4 @@ extra:
     - jdblischak
     - cbrueffer
     - halldc
+    - fhoehle
