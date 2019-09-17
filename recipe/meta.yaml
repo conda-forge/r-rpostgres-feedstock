@@ -50,7 +50,8 @@ requirements:
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
-    - r-bh
+    # BH is the header-only part of Boost and thus a compile-time requirement only
+    # - r-bh
     - r-dbi >=1.0.0
     - r-rcpp >=0.11.4.2
     - r-bit64
