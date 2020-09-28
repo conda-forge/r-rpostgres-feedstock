@@ -1,4 +1,4 @@
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RPostgres_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RPostgres/RPostgres_{{ version }}.tar.gz
-  sha256: fd2301fdaa35c849b18f9b7372ef885ae336be783205ac6c8a216f1ca4e2d299
+  sha256: f111c1ea42e4038d75506e80ead3d66f651432ae8ac203cce8c7ee29c5077ec6
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -75,7 +75,7 @@ about:
     Fully 'DBI'-compliant 'Rcpp'-backed interface to 'PostgreSQL' <https://www.postgresql.org/>,
     an open-source relational database.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
