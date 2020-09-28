@@ -3,7 +3,7 @@ About r-rpostgres
 
 Home: https://github.com/r-dbi/RPostgres
 
-Package license: GPL-2
+Package license: GPL-3.0-only
 
 Feedstock license: BSD-3-Clause
 
