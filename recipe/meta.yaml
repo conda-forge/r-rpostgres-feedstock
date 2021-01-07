@@ -43,6 +43,7 @@ requirements:
     - r-bit64
     - r-blob >=1.2.0
     - r-hms >=0.5.0
+    - r-lubridate
     - r-plogr >=0.2.0
     - r-withr
     - postgresql
@@ -56,6 +57,7 @@ requirements:
     - r-bit64
     - r-blob >=1.2.0
     - r-hms >=0.5.0
+    - r-lubridate
     - r-plogr >=0.2.0
     - r-withr
     - libpq
@@ -64,8 +66,11 @@ test:
   commands:
     - $R -e "library('RPostgres')"           # [not win]
     - "\"%R%\" -e \"library('RPostgres')\""  # [win]
+    - conda inspect linkages -p $PREFIX r-rpostgres  # [not win]
+    - conda inspect objects -p $PREFIX r-rpostgres   # [osx]
   requires:
     - conda-build
+
 about:
   home: https://github.com/r-dbi/RPostgres
   license: GPL-3.0-only
