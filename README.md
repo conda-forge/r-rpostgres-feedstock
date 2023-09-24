@@ -3,6 +3,7 @@ About r-rpostgres-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rpostgres-feedstock/blob/main/LICENSE.txt)
 
+
 About r-rpostgres
 -----------------
 
@@ -12,6 +13,7 @@ Package license: GPL-3.0-only
 
 Summary: Fully 'DBI'-compliant 'Rcpp'-backed interface to 'PostgreSQL' <https://www.postgresql.org/>,
 an open-source relational database.
+
 
 About r-rpostgres
 -----------------
