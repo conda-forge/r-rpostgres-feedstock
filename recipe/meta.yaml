@@ -1,4 +1,4 @@
-{% set version = "1.4.5" %}
+{% set version = "1.4.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RPostgres_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RPostgres/RPostgres_{{ version }}.tar.gz
-  sha256: 70ff848cba51ddad4642a20e01cda1033e6f218b015a13380c30604bbd18c797
+  sha256: d9ee4b67e35dbe574afafd36cf53c3e2ea743f94c8fae1ff33bdbb9f531ea0d1
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
