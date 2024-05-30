@@ -1,4 +1,4 @@
-{% set version = "1.4.6" %}
+{% set version = "1.4.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RPostgres_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RPostgres/RPostgres_{{ version }}.tar.gz
-  sha256: d9ee4b67e35dbe574afafd36cf53c3e2ea743f94c8fae1ff33bdbb9f531ea0d1
+  sha256: 3dd1f1d83bd8a25a0a86532c6971072fccea7b1769f601ad9daa8c9aa8f66924
 
 build:
   merge_build_host: true  # [win]
@@ -32,7 +32,9 @@ requirements:
     - r-dbi                      # [build_platform != target_platform]
     - r-lubridate                # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
