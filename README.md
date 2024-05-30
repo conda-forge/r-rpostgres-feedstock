@@ -9,7 +9,7 @@ About r-rpostgres
 
 Home: https://github.com/r-dbi/RPostgres
 
-Package license: GPL-3.0-only
+Package license: MIT
 
 Summary: Fully 'DBI'-compliant 'Rcpp'-backed interface to 'PostgreSQL' <https://www.postgresql.org/>,
 an open-source relational database.
@@ -20,7 +20,7 @@ About r-rpostgres
 
 Home: https://github.com/r-dbi/RPostgres
 
-Package license: GPL-3.0-only
+Package license: MIT
 
 Summary: Fully 'DBI'-compliant 'Rcpp'-backed interface to 'PostgreSQL' <https://www.postgresql.org/>,
 an open-source relational database.
@@ -83,13 +83,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5770&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rpostgres-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5770&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-rpostgres-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
