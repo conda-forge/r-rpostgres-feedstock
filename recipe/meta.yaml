@@ -15,6 +15,7 @@ source:
 build:
   merge_build_host: true  # [win]
   number: 0
+  skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,15 +23,14 @@ build:
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-hms                      # [build_platform != target_platform]
-    - r-rcpp                     # [build_platform != target_platform]
+    - r-dbi                      # [build_platform != target_platform]
     - r-bit64                    # [build_platform != target_platform]
+    - r-blob                     # [build_platform != target_platform]
+    - r-cpp11                    # [build_platform != target_platform]
+    - r-hms                      # [build_platform != target_platform]
+    - r-lubridate                # [build_platform != target_platform]
     - r-plogr                    # [build_platform != target_platform]
     - r-withr                    # [build_platform != target_platform]
-    - r-bh                       # [build_platform != target_platform]
-    - r-blob                     # [build_platform != target_platform]
-    - r-dbi                      # [build_platform != target_platform]
-    - r-lubridate                # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
@@ -49,12 +49,11 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-bh
-    - r-dbi >=1.1.0
-    - r-rcpp >=0.11.4.2
+    - r-dbi >=1.2.0
     - r-bit64
     - r-blob >=1.2.0
-    - r-hms >=0.5.0
+    - r-cpp11
+    - r-hms >=1.0.0
     - r-lubridate
     - r-plogr >=0.2.0
     - r-withr
@@ -62,13 +61,11 @@ requirements:
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    # BH is the header-only part of Boost and thus a compile-time requirement only
-    # - r-bh
-    - r-dbi >=1.1.0
-    - r-rcpp >=0.11.4.2
+    - r-dbi >=1.2.0
     - r-bit64
     - r-blob >=1.2.0
-    - r-hms >=0.5.0
+    - r-cpp11
+    - r-hms >=1.0.0
     - r-lubridate
     - r-plogr >=0.2.0
     - r-withr
@@ -83,13 +80,14 @@ test:
 
 about:
   home: https://github.com/r-dbi/RPostgres
-  license: GPL-3.0-only
+  license: MIT
   summary: |
     Fully 'DBI'-compliant 'Rcpp'-backed interface to 'PostgreSQL' <https://www.postgresql.org/>,
     an open-source relational database.
-  license_family: GPL3
+  license_family: MIT
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
+    - LICENSE
 
 extra:
   recipe-maintainers:
