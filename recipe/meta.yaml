@@ -1,4 +1,4 @@
-{% set version = "1.4.9" %}
+{% set version = "1.4.10" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RPostgres_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RPostgres/RPostgres_{{ version }}.tar.gz
-  sha256: f687d50c84c69afbe6228cfbf10ea8dc106755c40559cfd4e32ef0b7b55183fe
+  sha256: f73424438dbab7eb94e75b0732d62e7d25dd52040cac99b07b9c71f0a1fd03e9
 
 build:
   number: 0
